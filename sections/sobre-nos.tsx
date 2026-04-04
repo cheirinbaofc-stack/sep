@@ -10,7 +10,7 @@ const team = [
     role: "Fundadora & Diretora Criativa",
     quote: "Cada projeto começa com uma ideia. Nosso trabalho é fazer ela ganhar forma.",
     photo: null,
-    whatsapp: "5531193804790",
+    whatsapp: "5531938047900",
     initials: "SP",
   },
   {
