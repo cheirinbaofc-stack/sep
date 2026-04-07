@@ -5,6 +5,7 @@ import { Hero } from "@/sections/hero";
 import { Services } from "@/sections/services";
 import { ComoFunciona } from "@/sections/como-funciona";
 import { CTACentral } from "@/sections/cta-central";
+import { Galeria } from "@/sections/galeria";
 import { SobreNos } from "@/sections/sobre-nos";
 import { Contato } from "@/sections/contato";
 import { Footer } from "@/sections/footer";
@@ -32,6 +33,9 @@ export default function Home() {
 
         {/* CTA Central Section */}
         <CTACentral />
+
+        {/* Galeria Section - Showcase */}
+        <Galeria />
 
         {/* Sobre Nós Section */}
         <SobreNos />
