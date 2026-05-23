@@ -201,34 +201,43 @@ export function Contato() {
               </div>
             </div>
 
-            {/* Instagram Card */}
-            <ShineBorder
-              borderRadius={16}
-              borderWidth={1}
-              duration={10}
-              color={["#C9967A", "#D4A0B0"]}
-              className="bg-gradient-to-br from-[#833ab4]/10 via-[#fd1d1d]/10 to-[#fcb045]/10"
-            >
-              <a
-                href="https://instagram.com/sepprojetos3d"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block p-6"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center">
-                    <Instagram className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-[#F5EEF0] font-medium">@sepprojetos3d</p>
-                    <p className="text-[#A899A0] text-sm">Siga no Instagram</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-[#A899A0] text-sm">
-                  Veja fotos dos nossos trabalhos e acompanhe novidades!
-                </p>
-              </a>
-            </ShineBorder>
+         {/* Instagram Card */}
+<ShineBorder
+  borderRadius={16}
+  borderWidth={1.5}
+  duration={8}
+  // Cores do brilho sincronizadas com a identidade do Instagram para um efeito mais limpo
+  color={["#833ab4", "#fd1d1d", "#fcb045"]} 
+  className="relative w-full overflow-hidden rounded-2xl bg-gradient-to-br from-[#833ab4]/10 via-[#fd1d1d]/5 to-[#fcb045]/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl group"
+>
+  <a
+    href="https://instagram.com/sepprojetos3d.oficial"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative z-10 block p-6"
+  >
+    <div className="flex items-center gap-4">
+      {/* Ícone com animação de leve rotação no hover */}
+      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center shrink-0 shadow-lg transition-transform duration-300 group-hover:rotate-6">
+        <Instagram className="w-7 h-7 text-white" />
+      </div>
+      <div>
+        {/* Ajustado para bater com o link real */}
+        <p className="text-[#F5EEF0] font-semibold tracking-wide transition-colors group-hover:text-white">
+          @sepprojetos3d.oficial
+        </p>
+        <p className="text-[#A899A0] text-xs font-medium">
+          Siga no Instagram
+        </p>
+      </div>
+    </div>
+    
+    {/* Texto mais focado no nicho de Impressão 3D */}
+    <p className="mt-4 text-[#A899A0] text-sm leading-relaxed transition-colors group-hover:text-slate-200">
+      Acompanhe de perto nossos bastidores, novas impressões 3D, protótipos e projetos diários!
+    </p>
+  </a>
+</ShineBorder>
           </motion.div>
         </div>
       </div>
