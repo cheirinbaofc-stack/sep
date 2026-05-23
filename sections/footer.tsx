@@ -87,7 +87,7 @@ export function Footer() {
 
           {/* Social Links */}
           <div>
-            <h4 className="font-display text-lg text-[#F5EEF0] mb-4">Redes Sociais</h4>
+            
             <div className="flex gap-3">
               {socialLinks.map((link) => (
                 <a
@@ -115,7 +115,7 @@ export function Footer() {
           </p>
           {/* PARVUS Credit */}
           <a
-            href="https://parvus-sandy.vercel.app"
+            href="https://parvus.space"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#A899A0]/60 text-xs hover:text-[#C9967A] transition-colors duration-300"
