@@ -5,6 +5,53 @@ import { RevealOnScroll } from "@/components/ui/reveal";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { Sparkles, Heart, Snowflake } from "lucide-react";
 
+// Ajuste o número aqui caso necessário (DDI 55 + DDD 31 + Número)
+const WHATSAPP_NUMBER = "5531993804790"; 
+
+// Função auxiliar para gerar o link de forma segura
+const getWhatsappLink = (mensagem: string) => {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+};
+
+const produtosSacros = [
+  {
+    id: 1,
+    nome: "Escultura de Santa Rita de Cássia",
+    preco: "R$ 219,90",
+    tamanho: "20cm",
+    imagem: "/images/santarita.jpg",
+    descricao: "Escultura sacra detalhada com acabamento refinado para decoração de destaque.",
+    mensagemWhats: "Olá! Gostaria de encomendar a Escultura de Santa Rita de Cássia de 20cm (R$ 219,90) que vi no site."
+  },
+  {
+    id: 2,
+    nome: "Mini Nossa Senhora",
+    preco: "R$ 20,00",
+    tamanho: "8cm",
+    imagem: "/images/nossasenhorunid.jpg",
+    descricao: "Peça minimalista e delicada, ideal para lembrancinhas e pequenos altares.",
+    mensagemWhats: "Olá! Gostaria de encomendar a Mini Nossa Senhora de 8cm (R$ 20,00) que vi no site."
+  },
+  {
+    id: 3,
+    nome: "Kit Nossa Senhora Aparecida (16cm)",
+    preco: "R$ 85,00",
+    tamanho: "16cm",
+    imagem: "/images/kit16.jpg",
+    descricao: "Conjunto completo com imagem de 16cm, trazendo harmonia e fé ao ambiente.",
+    mensagemWhats: "Olá! Gostaria de encomendar o Kit de Nossa Senhora Aparecida com imagem de 16cm (R$ 85,00) que vi no site."
+  },
+  {
+    id: 4,
+    nome: "Kit Nossa Senhora Aparecida (8cm)",
+    preco: "R$ 70,00",
+    tamanho: "8cm",
+    imagem: "/images/kit8.jpeg",
+    descricao: "Versão compacta e charmosa do kit clássico, ideal para cabeceiras e prateleiras.",
+    mensagemWhats: "Olá! Gostaria de encomendar o Kit de Nossa Senhora Aparecida com imagem de 8cm (R$ 70,00) que vi no site."
+  }
+];
+
 export function Galeria() {
   return (
     <section id="galeria" className="relative py-24 scroll-offset overflow-hidden">
@@ -38,9 +85,9 @@ export function Galeria() {
           </p>
         </RevealOnScroll>
 
-        {/* Featured Image Showcase */}
+        {/* Featured Image Showcase (Olaf & Sven Mockup) */}
         <RevealOnScroll direction="up" delay={0.2}>
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-4xl mx-auto mb-28">
             {/* Decorative elements */}
             <motion.div 
               className="absolute -top-6 -left-6 text-[#C9967A]/30"
@@ -124,13 +171,80 @@ export function Galeria() {
           </div>
         </RevealOnScroll>
 
-        {/* CTA */}
+        {/* Seção: Catálogo de Esculturas e Kits */}
+        <div className="mt-20 mb-16">
+          <RevealOnScroll direction="up" className="text-center mb-12">
+            <h3 className="font-display text-2xl sm:text-3xl text-[#F5EEF0] mb-4">
+              Coleção de Arte Sacra e Kits Especiais
+            </h3>
+            <p className="text-[#A899A0] text-sm max-w-xl mx-auto">
+              Peças modeladas em alta resolução e finalizadas para agregar beleza e espiritualidade ao seu lar.
+            </p>
+          </RevealOnScroll>
+
+          {/* Grid de Produtos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {produtosSacros.map((produto, index) => (
+              <RevealOnScroll key={produto.id} direction="up" delay={0.1 * index}>
+                <motion.div
+                  className="group relative bg-[#0D0A0E]/60 backdrop-blur-md border border-[rgba(201,150,122,0.15)] hover:border-[rgba(201,150,122,0.4)] rounded-2xl overflow-hidden flex flex-col h-full transition-all duration-300"
+                  whileHover={{ y: -6, boxShadow: "0 10px 30px rgba(201,150,122,0.1)" }}
+                >
+                  {/* Imagem do Produto */}
+                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-[#151117]">
+                    <img
+                      src={produto.imagem}
+                      alt={produto.nome}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    
+                    {/* Badge de tamanho */}
+                    <span className="absolute bottom-3 left-3 text-[10px] font-semibold text-[#F5EEF0] px-2.5 py-1 rounded-full bg-[#0D0A0E]/80 backdrop-blur-md border border-[rgba(255,255,255,0.1)]">
+                      {produto.tamanho}
+                    </span>
+
+                    {/* Badge de preço */}
+                    <span className="absolute top-3 right-3 text-xs font-bold text-[#0D0A0E] px-3 py-1.5 rounded-full bg-gradient-to-r from-[#C9967A] to-[#D4A0B0]">
+                      {produto.preco}
+                    </span>
+                  </div>
+
+                  {/* Informações */}
+                  <div className="p-5 flex flex-col flex-grow">
+                    <h4 className="font-display text-base text-[#F5EEF0] mb-2 group-hover:text-[#C9967A] transition-colors duration-300">
+                      {produto.nome}
+                    </h4>
+                    <p className="text-xs text-[#A899A0] leading-relaxed mb-4 flex-grow">
+                      {produto.descricao}
+                    </p>
+
+                    {/* Botão de Encomenda direto para WhatsApp */}
+                    <motion.a
+                      href={getWhatsappLink(produto.mensagemWhats)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 rounded-xl border border-[rgba(201,150,122,0.3)] hover:bg-gradient-to-r hover:from-[#C9967A] hover:to-[#D4A0B0] hover:text-[#0D0A0E] text-[#C9967A] text-xs font-semibold tracking-wide text-center transition-all duration-300 flex items-center justify-center gap-1.5"
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      Encomendar no WhatsApp
+                    </motion.a>
+                  </div>
+                </motion.div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Geral para Orçamentos */}
         <RevealOnScroll direction="up" delay={0.4} className="text-center mt-12">
           <p className="text-[#A899A0] text-sm mb-4">
             Tem uma ideia parecida? Quer seus personagens favoritos em 3D?
           </p>
           <motion.a
-            href="#contato"
+            href={getWhatsappLink("Olá! Gostaria de fazer um orçamento para um projeto personalizado em impressão 3D.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#C9967A] to-[#D4A0B0] text-[#0D0A0E] font-medium text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,150,122,0.4)] hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
