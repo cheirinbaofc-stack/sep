@@ -19,7 +19,7 @@ const produtosSacros = [
     nome: "Escultura de Santa Rita de Cássia",
     preco: "R$ 219,90",
     tamanho: "20cm",
-    imagem: "/images/santarita.jpg",
+    imagem: "https://i98ebxf01w.ufs.sh/f/uqpbUCDrL7pPS8mNbSKzm9oUI3lXVBuZJ0pYCPb2TNLdcr5e",
     descricao: "Escultura sacra detalhada com acabamento refinado para decoração de destaque.",
     mensagemWhats: "Olá! Gostaria de encomendar a Escultura de Santa Rita de Cássia de 20cm (R$ 219,90) que vi no site."
   },
@@ -28,7 +28,7 @@ const produtosSacros = [
     nome: "Mini Nossa Senhora",
     preco: "R$ 20,00",
     tamanho: "8cm",
-    imagem: "/images/nossasenhorunid.jpg",
+    imagem: "https://i98ebxf01w.ufs.sh/f/uqpbUCDrL7pPIxRHhLr21ZF9mnb0aTY6deu8SXGjLh3N45cv",
     descricao: "Peça minimalista e delicada, ideal para lembrancinhas e pequenos altares.",
     mensagemWhats: "Olá! Gostaria de encomendar a Mini Nossa Senhora de 8cm (R$ 20,00) que vi no site."
   },
@@ -37,7 +37,7 @@ const produtosSacros = [
     nome: "Kit Nossa Senhora Aparecida (16cm)",
     preco: "R$ 85,00",
     tamanho: "16cm",
-    imagem: "/images/kit16.jpg",
+    imagem: "https://i98ebxf01w.ufs.sh/f/uqpbUCDrL7pPlpKLHnZhDEjrVyaFwiYvqu195nXTCQ0gW8Hb",
     descricao: "Conjunto completo com imagem de 16cm, trazendo harmonia e fé ao ambiente.",
     mensagemWhats: "Olá! Gostaria de encomendar o Kit de Nossa Senhora Aparecida com imagem de 16cm (R$ 85,00) que vi no site."
   },
@@ -46,7 +46,7 @@ const produtosSacros = [
     nome: "Kit Nossa Senhora Aparecida (8cm)",
     preco: "R$ 70,00",
     tamanho: "8cm",
-    imagem: "/images/kit8.jpeg",
+    imagem: "https://i98ebxf01w.ufs.sh/f/uqpbUCDrL7pP521H3C8MIW9FaTpi4Kt3Cywkjem80SfDxOPU",
     descricao: "Versão compacta e charmosa do kit clássico, ideal para cabeceiras e prateleiras.",
     mensagemWhats: "Olá! Gostaria de encomendar o Kit de Nossa Senhora Aparecida com imagem de 8cm (R$ 70,00) que vi no site."
   }
